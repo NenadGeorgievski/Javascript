@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="one" onclick="alert('Ouch! sTOP IT! oR DONT')">Click me</div>
+  <div id="two" onclick="stop()">Click me toO!</div>
+  <div id="three">Dont click here</div>
+  <button onclick="reveal(this)">Click the button</button>
+</body>
+
+<script>
+  function stop(){
+    alert("I said stahp!");
+  }
+
+  document.getElementById("three").onclick = function(){
+    alert("YOU ARE VERY NAUGHTY!");
+  }
+
+  function reveal(element){
+    console.log(element);
+    element.textContent = "I'm clicked!";
+    element.style.padding = "15px";
+    element.style.color = "red";
+    element.style.backgroundColor = "yellow";
+  }
+</script>
+</html>

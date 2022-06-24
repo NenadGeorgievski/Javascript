@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="one" class="testClass">One</div>
+  <div id="two" class="testClass">Two</div>
+  <div id="three" class="testClass">Three</div>
+  <div class="otherClass">Four</div>
+</body>
+
+<script>  
+let myClassArr = document.getElementsByClassName("testClass");
+
+console.log(myClassArr[2]);
+console.log(myClassArr.item(0));
+console.log(myClassArr.namedItem("one"));
+</script>
+</html>

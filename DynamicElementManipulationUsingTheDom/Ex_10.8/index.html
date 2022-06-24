@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="message"></div>
+  <div id="output"></div>
+  
+
+  <script>
+
+    let myNameArray = ["bobi","kire", "nikola", "nikolce", "sebastijan"];
+
+    let myElements = document.getElementsByTagName("div");
+
+    
+    function build(){
+      myElements.output.innerHTML = "<table name='html'> </table>";
+
+      let myTable = document.getElementsByName("html")[0];  
+      myNameArray.forEach((element,index) => {
+      myTable.innerHTML += "<tr data-row = '" +  (index + 1) + "' data-name = ' " + element + " ' onclick = 'getData(this)'><td>" + element + "</td><td class='box'>" + (index + 1) + "</td></tr>";
+     })
+     }
+    
+
+    build();
+
+    function getData(elem){
+      myElements.message.innerText = elem.getAttribute("data-row") + " " + elem.getAttribute("data-name");
+    }
+  </script>
+</body>
+</html>

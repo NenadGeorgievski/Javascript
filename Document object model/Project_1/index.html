@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="output">
+    <h1>Hello</h1>
+    <div>Test</div>
+    <ul>
+      <li id="one">One</li>
+      <li id="two">Two</li>
+    </ul>
+    <div>Test</div>
+  </div>
+
+  <script>
+    let outputClassElement = document.querySelector(".output");
+    let mainList = outputClassElement.children[2];
+    console.log(mainList);
+    mainList.id = "mainList";
+   /*  let divArray = document.querySelectorAll("div");
+    console.dir(divArray);
+    for (let i = 0; i < divArray.length; i++) {
+      
+      divArray[i].id = "div " + (i + 1);
+
+      if(i === 0){
+        divArray[i].style = "color: black";
+      } else if(i % 2 === 0){
+        divArray[i].style = "color: blue";
+      } else {
+        divArray[i].style = "color: red";
+      }
+    }
+    console.dir(divArray); */
+    let myArr = [];
+    for (let i = 0; i < outputClassElement.children.length; i++) {
+      console.dir(outputClassElement.children[i].localName);
+      if(outputClassElement.children[i].localName === "div"){
+        myArr.push(outputClassElement.children[i]);
+        let elementIndex = myArr.indexOf(outputClassElement.children[i]);
+        if(elementIndex % 2 === 0){
+          outputClassElement.children[i].style = "color: red";
+        } else {
+          outputClassElement.children[i].style = "color: blue";
+        }
+      }
+      
+    }
+    console.log(myArr);
+  </script>
+</body>
+</html>

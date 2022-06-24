@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #vanish {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    function toggleDisplay(){
+     let myMagic = document.getElementById("vanish");
+
+     if(myMagic.style.display === "none"){
+      myMagic.style.display = "block";
+     } else {
+      myMagic.style.display = "none";
+     }
+    }
+  </script>
+
+  <p id="vanish">I might appear and disappear</p>
+
+  <button onclick="toggleDisplay()" style="color:white; padding:15px; background-color: black; border-radius:2%;">Create magic!</button>
+
+  
+</body>
+</html>
