@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="message">Complete Javascript course!</div>
+  <div>
+    <input type="text" id="addItem">
+    <input type="button" id="addNew" value="Add To List">
+  </div>
+  <div id="output">
+    <h1>Shopping list</h1>
+    <ol id="sList"></ol>
+  </div>
+
+  <script>
+    let userInput = document.getElementById("addItem");
+    let addButton = document.getElementById("addNew");
+    let listOfItems = document.getElementById("sList");
+
+    addButton.addEventListener("click", function(){
+      
+      let userValue = userInput.value;
+      if(userValue !== ""){
+        let listItem = document.createElement("li");
+        listItem.innerText = userValue;
+        listOfItems.appendChild(listItem);
+      }
+      
+    });
+  </script>
+</body>
+</html>

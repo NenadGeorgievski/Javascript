@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="square" style="width:100px; height:100px;background-color:gray;">
+    Click for magic!
+  </div>
+  <script>
+    window.onload = function(){
+      document.getElementById("square").addEventListener("click", changeColor);
+    
+
+    function changeColor(){
+      let red = Math.floor(Math.random() * 256);
+      let green = Math.floor(Math.random() * 256);
+      let blue = Math.floor(Math.random() * 256);
+      console.log(this);
+      this.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    }
+  };
+
+
+  </script>
+  
+</body>
+</html>
