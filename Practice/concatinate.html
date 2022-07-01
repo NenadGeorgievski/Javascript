@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript program to concatinate two string except their first character</title>
+</head>
+<body>
+  <h2>Concatinate two strings except their first character</h2>
+
+  <ul id="showString">
+
+  </ul>
+
+  <h2>Contatinate two strings in another way</h2>
+  <ul id="showString2"></ul>
+
+  <script>
+    let stringList = document.getElementById("showString");
+    let stringList2 = document.getElementById("showString2");
+    function concatStringWithoutFirstCharacters(str1 = "",str2 = ""){
+      if(typeof str1 === "string" && typeof str2 === "string")
+      {
+        let string1 = str1.substring(1);
+        let string2 = str2.substring(1);
+        let concatStr = string1 + string2;
+
+      stringList.innerHTML += `<li>${str1} + ${str2} = ${concatStr}</li>`
+      }
+    
+    }
+
+    function concatStringWithoutLastCharacters(str1 = "",str2 = ""){
+      if(typeof str1 === "string" && typeof str2 === "string")
+      {
+        let string1 = str1.substring(0, str1.length - 1);
+        let string2 = str2.substring(0, str2.length - 1);
+        let concatStr = string1 + string2;
+
+      stringList2.innerHTML += `<li>${str1} + ${str2} = ${concatStr}</li>`
+      }
+    
+    }
+
+    concatStringWithoutFirstCharacters("JHello", "cbuddy");
+    concatStringWithoutLastCharacters("GOody", "Morning");
+  </script>
+  
+</body>
+</html>

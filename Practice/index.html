@@ -4,9 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Adding values in two different ways</title>
 </head>
 <body>
-  <script src="./main.js"></script>
+  <h2>The sum is:</h2>
+  <ol id="sumOfNumbers">
+
+  </ol>
+
+  <script>
+    let sumList = document.getElementById("sumOfNumbers");
+
+    function simpleSum(num1,num2,num3){
+      let result = num1 + num2 + num3;
+      sumList.innerHTML += `<li>${num1} + ${num2} + ${num3} = ${result}</li>`;
+    }
+
+    function arrSum(arr){
+      let result = 0;
+      let showNumbers = "";
+      for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        result += element;
+
+        if(i === arr.length - 1){
+          showNumbers += `${element}`;
+        } else {
+          showNumbers += `${element} + `;
+        }
+        sumList.innerHTML += `<li>${showNumbers} = ${result}</li>`;
+      }
+
+    }
+
+    simpleSum(33,13,5);
+    simpleSum(4,22,18);
+    simpleSum(3,-1,2);
+
+    arrSum([12,111,233]);
+  </script>
 </body>
 </html>
