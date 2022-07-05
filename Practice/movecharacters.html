@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript program to move the last three characters of a string</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+  <h2>Show edited string:</h2>
+  <table id="showString" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Original string</th>
+        <th scope="col">Edited string</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+   
+  </table>
+  <script>
+    let myTable = document.getElementById("showString");
+    myTable.classList.add("text-center");
+    let counter = 1;
+
+    function addRow(orgString, editedString){
+      let row = document.createElement("tr");
+      let rowHeader = document.createElement("th");
+      rowHeader.setAttribute("scope","row");
+      rowHeader.innerText = counter;
+      counter++;
+      let rowOrgString = document.createElement("td");
+      rowOrgString.innerText = orgString;
+      let rowEditedString = document.createElement("td");
+      rowEditedString.innerText = editedString;
+      row.appendChild(rowHeader); 
+      row.appendChild(rowOrgString);
+      row.appendChild(rowEditedString);
+      myTable.children[1].appendChild(row);
+
+    }
+
+    function moveCharacters(str = ""){
+      if(str.length >= 3){
+        let editString = str.slice(str.length - 3) + str.slice(0, str.length - 3);
+        addRow(str, editString);
+      } else {
+        console.log("You did not write a word longer than 3 characters.");
+      }
+    }
+
+    moveCharacters("educator");
+    moveCharacters("Destroyer");
+  </script>
+  
+</body>
+</html>
